@@ -1,4 +1,4 @@
-import 'package:belajar_slicing/shared/theme.dart';
+import 'package:belajar_slicing/core.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -72,26 +72,34 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Column(
                     children: [
-                      Container(
-                        height: 65,
-                        width: 62,
-                        decoration: const BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(12.0),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => PointsView()));
+                        },
+                        child: Container(
+                          height: 65,
+                          width: 62,
+                          decoration: const BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(12.0),
+                            ),
                           ),
-                        ),
-                        child: const Padding(
-                          padding: EdgeInsets.all(10.0),
-                          child: ImageIcon(
-                            NetworkImage(
-                              "https://i.ibb.co/rsz6JWq/751463.png",
+                          child: const Padding(
+                            padding: EdgeInsets.all(10.0),
+                            child: ImageIcon(
+                              NetworkImage(
+                                "https://i.ibb.co/rsz6JWq/751463.png",
+                              ),
                             ),
                           ),
                         ),
                       ),
                       Text(
-                        "Presensi",
+                        "Point Siswa",
                         style: whiteTextStyle.copyWith(
                           color: greyColor,
                         ),
